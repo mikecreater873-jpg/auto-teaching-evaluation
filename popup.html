@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+  <meta charset="utf-8">
+  <title>评教自动答题器</title>
+  <link rel="stylesheet" href="popup.css">
+</head>
+<body>
+  <div class="container">
+    <h1>评教自动答题器</h1>
+
+    <div class="row">
+      <button id="btn-start" class="btn primary">开始</button>
+      <button id="btn-stop" class="btn danger">停止</button>
+    </div>
+
+    <div class="info">
+      <div>状态：<span id="status">未开始</span></div>
+      <div>已完成：<span id="completed">0</span> 位老师</div>
+    </div>
+
+    <details class="answers">
+      <summary>答案配置（可修改，点保存生效）</summary>
+      <div id="answers-config"></div>
+      <div class="row">
+        <label>第13题文本：</label>
+        <input id="q13" type="text" value="无">
+      </div>
+      <button id="btn-save" class="btn">保存答案</button>
+      <div id="save-hint" class="hint"></div>
+    </details>
+
+    <div class="log-title">运行日志</div>
+    <div id="log"></div>
+  </div>
+  <script src="popup.js"></script>
+</body>
+</html>

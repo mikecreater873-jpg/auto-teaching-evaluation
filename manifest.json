@@ -1,0 +1,22 @@
+{
+  "manifest_version": 3,
+  "name": "评教自动答题器",
+  "version": "1.0.0",
+  "description": "自动完成学生评教问卷：遍历名单、填答案、提交，自动处理服务器失败重试。",
+  "permissions": ["storage", "tabs", "scripting"],
+  "host_permissions": ["*://jxgl.dlut.edu.cn/*"],
+  "background": {
+    "service_worker": "background.js"
+  },
+  "action": {
+    "default_popup": "popup.html",
+    "default_title": "评教自动答题器"
+  },
+  "content_scripts": [
+    {
+      "matches": ["*://jxgl.dlut.edu.cn/*"],
+      "js": ["content.js"],
+      "run_at": "document_idle"
+    }
+  ]
+}
